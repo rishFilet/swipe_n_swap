@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
 class Constants {
   // MARK: Strings
@@ -13,4 +14,8 @@ class Constants {
   // MARK: doubles
 
   static const kDefaultPaddingMultiplier = 1.8;
+
+  // MARK: ints
+
+  static const kDefaultBlueHexValue = 0xFF2180DE;
 }
