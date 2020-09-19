@@ -22,17 +22,24 @@ class PhotoHolder extends StatelessWidget {
     getPictureFromApi();
     return Container(
       decoration: BoxDecoration(
-          color: Colors.greenAccent,
-          borderRadius: BorderRadius.all(Radius.circular(15))),
+        color: Colors.greenAccent,
+        borderRadius: BorderRadius.all(
+          Radius.circular(15),
+        ),
+      ),
       height: MediaQuery.of(context).size.height * 0.8,
       child: Image.network(
-        'https://apod.nasa.gov/apod/image/2008/helix_blancoHubble_1080.jpg', fit: BoxFit.cover,
-        loadingBuilder: (BuildContext context, Widget child,
-            ImageChunkEvent loadingProgress) {
-          if (loadingProgress == null) return child;
-          return Center(
-            child: CircularProgressIndicator(
-              value: loadingProgress.expectedTotalBytes != null
+        'https://apod.nasa.gov/apod/image/2008/helix_blancoHubble_1080.jpg',
+        fit: BoxFit.cover,
+        loadingBuilder: (
+          BuildContext context,
+          Widget child,
+          ImageChunkEvent loadingProgress,
+          ){
+            if (loadingProgress == null) return child;
+            return Center(
+              child: CircularProgressIndicator(
+                value: loadingProgress.expectedTotalBytes != null
                   ? loadingProgress.cumulativeBytesLoaded /
                       loadingProgress.expectedTotalBytes
                   : null,
