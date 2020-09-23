@@ -33,12 +33,8 @@ dependencies:
   dartz: ^0.8.6
   # Remote API
   connectivity: ^0.4.3+7
-<<<<<<< HEAD
-  http: ^0.12.0+2
   google_fonts: ^1.1.0
-=======
   http: ^0.12.2
->>>>>>> master
   # Local cache
   shared_preferences: ^0.5.3+4
 
