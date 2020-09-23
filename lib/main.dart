@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swipe_swap/features/login/presentation/pages/login_page.dart';
 
+<<<<<<< HEAD
 void main() {
   runApp(MyApp());
 }
@@ -31,4 +32,20 @@ class MyApp extends StatelessWidget {
       home: LoginPage(),
     );
   }
+=======
+import './features/login/presentation/pages/home.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'SwipeNSwap',
+      home: Scaffold(
+        body: SafeArea(
+          child: HomePage(),
+        ),
+      ),
+    ),
+  );
+>>>>>>> master
 }
