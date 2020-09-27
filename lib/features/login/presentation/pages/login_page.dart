@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:swipe_swap/utilities/constants.dart';
-import 'package:swipe_swap/utilities/size_config.dart';
+
+import '../../../../utilities/constants.dart';
+import '../../../../utilities/size_config.dart';
 
 class LoginPage extends StatelessWidget {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();

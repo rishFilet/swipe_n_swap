@@ -3,6 +3,10 @@ import 'package:flutter_test/flutter_test.dart';
 
 import '../lib/features/login/presentation/pages/login_options.dart';
 
+final Size iPhone8Plus = Size(414.0, 716.0); // Size for iPhone8Plus
+final TestWidgetsFlutterBinding binding =
+    TestWidgetsFlutterBinding.ensureInitialized();
+
 void main() {
   testWidgets(
       "test that the initial page properly presents", _testFirstPagePresents);
@@ -23,10 +27,6 @@ Future<void> _testFirstPagePresents(WidgetTester tester) async {
 }
 
 // MARK: - Private
-
-final Size iPhone8Plus = Size(414.0, 716.0); // Size for iPhone8Plus
-final TestWidgetsFlutterBinding binding =
-    TestWidgetsFlutterBinding.ensureInitialized();
 
 Widget _buildTestableWidget(Widget widget) {
   return MaterialApp(home: widget);

@@ -19,6 +19,11 @@ class Constants {
 
   static const kDefaultBlueHexValue = 0xFF2180DE;
 
-  static const kTextDefaultStyle =
-      const TextStyle(color: kTextColor, fontSize: 14, fontWeight: FontWeight.normal);
+  // MARK: Styles
+
+  static const kTextDefaultStyle = const TextStyle(
+    color: kTextColor,
+    fontSize: 14,
+    fontWeight: FontWeight.normal,
+  );
 }

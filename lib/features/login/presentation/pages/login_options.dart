@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:swipe_swap/features/login/presentation/widgets/long_button.dart';
-import 'package:swipe_swap/utilities/constants.dart';
+
+import '../widgets/long_button.dart';
+import '../../../../utilities/constants.dart';
 
 class LoginOptions extends StatelessWidget {
   @override
@@ -24,8 +25,10 @@ class LoginOptions extends StatelessWidget {
                       color: Color(0xFFC4C4C4),
                     ),
                     child: Center(
-                      child:
-                          Text('logo/name', style: Constants.kTextDefaultStyle),
+                      child: Text(
+                        'logo/name',
+                        style: Constants.kTextDefaultStyle,
+                      ),
                     ),
                   ),
                   SizedBox(height: 110),

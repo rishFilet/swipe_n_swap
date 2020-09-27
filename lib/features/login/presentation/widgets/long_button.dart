@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:swipe_swap/utilities/constants.dart';
+
+import '../../../../utilities/constants.dart';
 
 typedef _LongButtonAction();
 
