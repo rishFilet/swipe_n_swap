@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:swipe_swap/features/login/presentation/pages/login_page.dart';
+import '../lib/features/login/presentation/pages/login_options.dart';
 
 void main() {
   testWidgets(
-      "test that the initial login page properly presents", _blankCreation);
+      "test that the initial page properly presents", _testFirstPagePresents);
 }
 
 // MARK: - Tests
 
-// test that the initial login page properly presents
-Future<void> _blankCreation(WidgetTester tester) async {
-  /*
+// test that the first page properly presents
+Future<void> _testFirstPagePresents(WidgetTester tester) async {
   await binding.setSurfaceSize(iPhone8Plus);
-  await tester.pumpWidget(_buildTestableWidget(LoginPage()));
-  expect(find.text('Log in to find the best trades'), findsOneWidget);
-  */
+  await tester.pumpWidget(_buildTestableWidget(LoginOptions()));
+  expect(find.text('logo/name'), findsOneWidget);
+  expect(find.text('Sign up for new account'), findsOneWidget);
+  expect(find.text('Log in with Google'), findsOneWidget);
+  expect(find.text('Log in with Facebook'), findsOneWidget);
+  expect(find.byType(FlatButton), findsNWidgets(4));
+  expect(find.byType(Image), findsNWidgets(2));
 }
 
 // MARK: - Private
