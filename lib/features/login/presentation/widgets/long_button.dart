@@ -12,13 +12,15 @@ class LongButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      onPressed: action,
-      child: _buildChild(),
-      color: Color(0xFFD0D0D0),
+    return ButtonTheme(
       height: 45,
       minWidth: double.infinity,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+      child: FlatButton(
+        onPressed: action,
+        child: _buildChild(),
+        color: Color(0xFFD0D0D0),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+      ),
     );
   }
 
