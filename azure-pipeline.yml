@@ -7,8 +7,7 @@ trigger:
 - master
 jobs:
   - job: Android
-    pool:
-      vmImage: 'macOS-latest'
+    pool: Rishi-LOCAL
     steps:
     - task: Hey24sheep.flutter.flutter-install.FlutterInstall@0
       inputs:
