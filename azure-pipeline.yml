@@ -27,6 +27,7 @@ jobs:
         apksign: true
         apksignerKeystoreFile: key_for_signing.jks
         apksignerKeystorePassword: $(keypassword)
+        apksignerKeystoreAlias: $(keyalias)
         apksignerKeyPassword: $(keypassword)
     - task: CopyFiles@2
       inputs:
