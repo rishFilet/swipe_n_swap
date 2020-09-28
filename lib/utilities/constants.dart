@@ -10,6 +10,8 @@ class Constants {
 
   static const kTextColor = Colors.black;
   static const kTextLightColor = Colors.grey;
+  static const kBackgroundColor = Colors.black26;
+  static const kLightBackgroundColor = Colors.black12;
 
   // MARK: doubles
 
