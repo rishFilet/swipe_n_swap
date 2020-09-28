@@ -1,6 +1,5 @@
 # Flutter build
 variables:
-  projectDirectory: 'swipe_swap'
   group: swipeswapsigning
 
 trigger:
@@ -18,7 +17,7 @@ jobs:
     - task: Hey24sheep.flutter.flutter-build.FlutterBuild@0
       inputs:
         target: apk
-        projectDirectory: $(projectDirectory)
+        projectDirectory: $(Build.SourcesDirectory)
 
     - task: AndroidSigning@3
       displayName: 'Signing and aligning APK file(s) **/*.apk'
