@@ -1,6 +1,8 @@
 # Flutter build
 variables:
   projectDirectory: 'swipe_swap'
+  group: swipeswapsigning
+
 trigger:
 - master
 jobs:
