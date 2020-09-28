@@ -22,7 +22,7 @@ class LoginOptions extends StatelessWidget {
                     height: 156.0,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Color(0xFFC4C4C4),
+                      color: Constants.kBackgroundColor,
                     ),
                     child: Center(
                       child: Text(
@@ -32,9 +32,15 @@ class LoginOptions extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 110),
-                  LongButton('Sign up for new account', action: () {}),
+                  LongButton(
+                    'Sign up for new account',
+                    action: () {},
+                  ),
                   SizedBox(height: 8),
-                  LongButton('Log In', action: () {}),
+                  LongButton(
+                    'Log In',
+                    action: () {},
+                  ),
                   SizedBox(height: 8),
                   LongButton(
                     'Log in with Google',
