@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../../utilities/constants.dart';
 
-typedef _LongButtonAction();
-
 class LongButton extends StatelessWidget {
   final String title, icon;
-  final _LongButtonAction action;
+  final void Function() action;
 
   LongButton(this.title, {this.action, this.icon});
 
@@ -18,7 +16,7 @@ class LongButton extends StatelessWidget {
       child: FlatButton(
         onPressed: action,
         child: _buildChild(),
-        color: Color(0xFFD0D0D0),
+        color: Constants.kBackgroundColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
       ),
     );
