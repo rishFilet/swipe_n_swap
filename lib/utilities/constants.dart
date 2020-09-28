@@ -23,7 +23,7 @@ class Constants {
 
   static const kTextDefaultStyle = const TextStyle(
     color: kTextColor,
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: FontWeight.normal,
   );
 }
