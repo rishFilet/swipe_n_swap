@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/long_button.dart';
+import '../widgets/base_textform.dart';
 import '../../../../utilities/constants.dart';
 
 class LoginPage extends StatelessWidget {
@@ -40,70 +41,36 @@ class LoginPage extends StatelessWidget {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.only(bottom: 4),
-                            child: Text(
-                              'Email address',
-                              style: Constants.kTextDefaultStyle,
-                              textAlign: TextAlign.start,
-                            ),
-                          ),
-                          TextFormField(
-                            decoration: InputDecoration(
-                              fillColor: Color(0xFFF1F1F1),
-                              filled: true,
-                              contentPadding: const EdgeInsets.symmetric(
-                                  //  vertical: 14,
-                                  horizontal: 12),
-                              border: InputBorder.none,
-                            ),
-                            style: TextStyle(
-                              color: Constants.kTextColor,
-                              fontSize: 14,
-                            ),
+                          BaseTextForm(
+                            header: 'Email address',
                             validator: (value) => !value.contains('@')
                                 ? "Not a valid email"
                                 : null,
-                            onSaved: (_) => null, // will send event to Bloc
+                            onSaved: (_) => null,
                           ),
                           SizedBox(height: 12),
-                          Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.only(bottom: 4),
-                            child: Text(
-                              'Password',
-                              style: Constants.kTextDefaultStyle,
-                              textAlign: TextAlign.start,
-                            ),
-                          ),
-                          TextFormField(
-                            decoration: InputDecoration(
-                              fillColor: Color(0xFFF1F1F1),
-                              filled: true,
-                              contentPadding: const EdgeInsets.symmetric(
-                                  //  vertical: 14,
-                                  horizontal: 12),
-                              border: InputBorder.none,
-                            ),
-                            style: TextStyle(
-                              color: Constants.kTextColor,
-                              fontSize: 14,
-                            ),
+                          BaseTextForm(
+                            header: 'Password',
                             validator: (value) => value.length < 6
                                 ? "Must be at least 6 characters long"
                                 : null,
-                            onSaved: (_) => null, // will send event to Bloc
+                            onSaved: (_) => null,
                             obscureText: true,
                           ),
                         ],
                       ),
                     ),
                     SizedBox(height: 26),
-                    LongButton('Log in', action: _manualLogin),
+                    LongButton(
+                      'Log in',
+                      action: _manualLogin,
+                    ),
                     SizedBox(height: 8),
-                    LongButton('Forgot your password?',
-                        action: () {}, style: LongButtonStyle.secondary),
+                    LongButton(
+                      'Forgot your password?',
+                      action: () {},
+                      style: LongButtonStyle.secondary,
+                    ),
                   ],
                 ),
               ),
