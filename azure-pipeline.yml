@@ -29,6 +29,7 @@ jobs:
         apksignerKeystorePassword: $(keystorepassword)
         apksignerKeystoreAlias: $(keyalias)
         apksignerKeyPassword: $(keypassword)
+        apksignerArguments: --pass-encoding
     - task: CopyFiles@2
       inputs:
         contents: '**/*.apk'
