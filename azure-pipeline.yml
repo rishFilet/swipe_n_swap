@@ -10,7 +10,7 @@ jobs:
     pool:
       name: Rishi-LOCAL
       demands:
-      - agent.version -equals 2.175.2
+      - Agent.Version -gtVersion 2.175.2
     steps:
     - task: Hey24sheep.flutter.flutter-install.FlutterInstall@0
       inputs:
