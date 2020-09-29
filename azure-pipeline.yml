@@ -25,7 +25,7 @@ jobs:
       inputs:
         apkFiles: '**/*.apk'
         apksign: true
-        apksignerKeystoreFile: key_for_signing.jks
+        apksignerKeystoreFile: debugKey.jks
         apksignerKeystorePassword: $(keystorepassword)
         apksignerKeystoreAlias: $(keyalias)
         apksignerKeyPassword: $(keypassword)
