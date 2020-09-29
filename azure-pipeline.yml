@@ -8,7 +8,7 @@ trigger:
 jobs:
   - job: Android
     pool:
-      name: Rishi-LOCAL
+      vmImage: 'ubuntu-latest'
     steps:
     - task: Hey24sheep.flutter.flutter-install.FlutterInstall@0
       inputs:
