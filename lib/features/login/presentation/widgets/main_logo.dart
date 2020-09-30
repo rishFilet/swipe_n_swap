@@ -10,7 +10,7 @@ class MainLogo extends StatelessWidget {
       height: 156.0,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Color(0xFFC4C4C4),
+        color: Constants.kLightBackgroundColor,
       ),
       child: Center(
         child: Text(

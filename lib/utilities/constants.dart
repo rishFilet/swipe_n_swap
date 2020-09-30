@@ -19,7 +19,7 @@ class Constants {
 
   // MARK: ints
 
-  static const kDefaultBlueHexValue = 0xFF2180DE;
+  static const textFieldBackgroundHex = 0xFFF1F1F1;
 
   // MARK: Styles
 

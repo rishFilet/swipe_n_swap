@@ -21,12 +21,15 @@ class LongButton extends StatelessWidget {
       child: FlatButton(
         onPressed: action,
         child: _buildChild(),
-        color:
-            style == LongButtonStyle.primary ? Color(0xFFD0D0D0) : Colors.white,
-        splashColor:
-            style == LongButtonStyle.primary ? Color(0xFFADADAD) : Colors.white,
-        highlightColor:
-            style == LongButtonStyle.primary ? Color(0xFFADADAD) : Colors.white,
+        color: style == LongButtonStyle.primary
+            ? Constants.kLightBackgroundColor
+            : Colors.white,
+        splashColor: style == LongButtonStyle.primary
+            ? Constants.kBackgroundColor
+            : Colors.white,
+        highlightColor: style == LongButtonStyle.primary
+            ? Constants.kBackgroundColor
+            : Colors.white,
       ),
     );
   }

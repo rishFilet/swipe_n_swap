@@ -29,7 +29,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 15.0),
+                padding: EdgeInsets.only(top: 25.0),
                 child: Align(
                   alignment: Alignment.topCenter,
                   child: Container(

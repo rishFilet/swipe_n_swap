@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:swipe_swap/features/login/presentation/pages/login.dart';
-import 'package:swipe_swap/features/login/presentation/pages/login_options.dart';
+
+import '../features/login/presentation/pages/login.dart';
+import '../features/login/presentation/pages/login_options.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {

@@ -46,7 +46,7 @@ class BaseTextForm extends StatelessWidget {
       TextFormField(
         key: textFieldKey,
         decoration: InputDecoration(
-          fillColor: Color(0xFFF1F1F1),
+          fillColor: Color(Constants.textFieldBackgroundHex),
           filled: true,
           contentPadding: const EdgeInsets.symmetric(horizontal: 12),
           border: InputBorder.none,
