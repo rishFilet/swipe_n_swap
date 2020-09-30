@@ -7,9 +7,14 @@ class BaseTextForm extends StatelessWidget {
   final String Function(String) validator;
   final Function(String) onSaved;
   final bool obscureText;
+  final Key textFieldKey;
 
   const BaseTextForm(
-      {this.header, this.validator, this.onSaved, bool obscureText = false})
+      {this.textFieldKey,
+      this.header,
+      this.validator,
+      this.onSaved,
+      bool obscureText = false})
       : obscureText = obscureText;
 
   @override
@@ -39,6 +44,7 @@ class BaseTextForm extends StatelessWidget {
 
     children.add(
       TextFormField(
+        key: textFieldKey,
         decoration: InputDecoration(
           fillColor: Color(0xFFF1F1F1),
           filled: true,

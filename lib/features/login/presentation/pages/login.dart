@@ -7,6 +7,9 @@ import '../widgets/main_logo.dart';
 class LoginPage extends StatelessWidget {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+  static const emailTextFieldKey = Key('emailTextFieldKey');
+  static const passwordTextFieldKey = Key('passwordTextFieldKey');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +45,7 @@ class LoginPage extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                               BaseTextForm(
+                                textFieldKey: LoginPage.emailTextFieldKey,
                                 header: 'Email address',
                                 validator: (value) => !value.contains('@')
                                     ? "Not a valid email"
@@ -50,6 +54,7 @@ class LoginPage extends StatelessWidget {
                               ),
                               SizedBox(height: 12),
                               BaseTextForm(
+                                textFieldKey: LoginPage.passwordTextFieldKey,
                                 header: 'Password',
                                 validator: (value) => value.length < 6
                                     ? "Must be at least 6 characters long"
