@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/long_button.dart';
-import '../../../../utilities/constants.dart';
+import '../widgets/main_logo.dart';
 
 class LoginOptions extends StatelessWidget {
   @override
@@ -17,20 +17,7 @@ class LoginOptions extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    width: 156.0,
-                    height: 156.0,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Constants.kBackgroundColor,
-                    ),
-                    child: Center(
-                      child: Text(
-                        'logo/name',
-                        style: Constants.kTextDefaultStyle,
-                      ),
-                    ),
-                  ),
+                  MainLogo(),
                   SizedBox(height: 110),
                   LongButton(
                     'Sign up for new account',

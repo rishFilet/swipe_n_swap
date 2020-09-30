@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/long_button.dart';
 import '../widgets/base_textform.dart';
-import '../../../../utilities/constants.dart';
+import '../widgets/main_logo.dart';
 
 class LoginPage extends StatelessWidget {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -21,20 +21,7 @@ class LoginPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Container(
-                      width: 156.0,
-                      height: 156.0,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xFFC4C4C4),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'logo/name',
-                          style: Constants.kTextDefaultStyle,
-                        ),
-                      ),
-                    ),
+                    MainLogo(),
                     SizedBox(height: 90),
                     Form(
                       key: formKey,
