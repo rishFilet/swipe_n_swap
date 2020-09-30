@@ -11,57 +11,72 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.only(top: 65.0),
-          child: SingleChildScrollView(
-            child: Align(
-              alignment: Alignment.topCenter,
-              child: Container(
-                width: 236,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    MainLogo(),
-                    SizedBox(height: 90),
-                    Form(
-                      key: formKey,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          BaseTextForm(
-                            header: 'Email address',
-                            validator: (value) => !value.contains('@')
-                                ? "Not a valid email"
-                                : null,
-                            onSaved: (_) => null,
-                          ),
-                          SizedBox(height: 12),
-                          BaseTextForm(
-                            header: 'Password',
-                            validator: (value) => value.length < 6
-                                ? "Must be at least 6 characters long"
-                                : null,
-                            onSaved: (_) => null,
-                            obscureText: true,
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 26),
-                    LongButton(
-                      'Log in',
-                      action: _manualLogin,
-                    ),
-                    SizedBox(height: 8),
-                    LongButton(
-                      'Forgot your password?',
-                      action: () {},
-                      style: LongButtonStyle.secondary,
-                    ),
-                  ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Container(
+                width: double.infinity,
+                alignment: Alignment.centerLeft,
+                child: IconButton(
+                  padding: EdgeInsets.only(left: 16),
+                  icon: Icon(Icons.arrow_back),
+                  splashColor: Colors.white,
+                  highlightColor: Colors.white,
+                  onPressed: () => Navigator.of(context).pop(),
                 ),
               ),
-            ),
+              Padding(
+                padding: EdgeInsets.only(top: 15.0),
+                child: Align(
+                  alignment: Alignment.topCenter,
+                  child: Container(
+                    width: 236,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        MainLogo(),
+                        SizedBox(height: 90),
+                        Form(
+                          key: formKey,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              BaseTextForm(
+                                header: 'Email address',
+                                validator: (value) => !value.contains('@')
+                                    ? "Not a valid email"
+                                    : null,
+                                onSaved: (_) => null,
+                              ),
+                              SizedBox(height: 12),
+                              BaseTextForm(
+                                header: 'Password',
+                                validator: (value) => value.length < 6
+                                    ? "Must be at least 6 characters long"
+                                    : null,
+                                onSaved: (_) => null,
+                                obscureText: true,
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 26),
+                        LongButton(
+                          'Log in',
+                          action: _manualLogin,
+                        ),
+                        SizedBox(height: 8),
+                        LongButton(
+                          'Forgot your password?',
+                          action: () {},
+                          style: LongButtonStyle.secondary,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
