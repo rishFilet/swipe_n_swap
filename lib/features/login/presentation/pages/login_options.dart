@@ -25,7 +25,7 @@ class LoginOptions extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   LongButton(
-                    'Log In',
+                    'Log in',
                     action: () => Navigator.of(context).pushNamed('/login'),
                   ),
                   SizedBox(height: 8),
