@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../../../../utilities/constants.dart';
 
+enum LongButtonStyle { primary, secondary }
+
 class LongButton extends StatelessWidget {
   final String title, icon;
   final void Function() action;
+  final LongButtonStyle style;
 
-  LongButton(this.title, {this.action, this.icon});
+  const LongButton(this.title,
+      {this.action, this.icon, LongButtonStyle style = LongButtonStyle.primary})
+      : style = style;
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +21,15 @@ class LongButton extends StatelessWidget {
       child: FlatButton(
         onPressed: action,
         child: _buildChild(),
-        color: Constants.kBackgroundColor,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+        color: style == LongButtonStyle.primary
+            ? Constants.kLightBackgroundColor
+            : Colors.white,
+        splashColor: style == LongButtonStyle.primary
+            ? Constants.kBackgroundColor
+            : Colors.white,
+        highlightColor: style == LongButtonStyle.primary
+            ? Constants.kBackgroundColor
+            : Colors.white,
       ),
     );
   }

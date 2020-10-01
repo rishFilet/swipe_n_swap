@@ -4,7 +4,6 @@ class SizeConfig {
   static MediaQueryData _mediaQueryData;
   static double screenWidth;
   static double screenHeight;
-  static double defaultSize;
   static Orientation orientation;
 
   SizeConfig(BuildContext context) {
@@ -12,6 +11,5 @@ class SizeConfig {
     screenWidth = _mediaQueryData.size.width;
     screenHeight = _mediaQueryData.size.height;
     orientation = _mediaQueryData.orientation;
-    defaultSize = screenWidth * 0.024;
   }
 }
