@@ -16,7 +16,6 @@ android:
 before_install:
 - gem install bundler
 - cd android/
-- chmod +x gradlew
 - bundle install
 - gem update --system
 - gem install fastlane --no-rdoc --no-ri --no-document --quiet
