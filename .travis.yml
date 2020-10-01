@@ -1,0 +1,29 @@
+
+language: android
+jdk:
+- oraclejdk8
+sudo: required
+
+android:
+  components:
+  - tools
+  - build-tools-25.0.2
+  - android-25
+  - platform-tools
+  - extra-google-m2repository
+  - extra-android-m2repository
+  - extra-android-support
+before_install:
+- gem install bundler
+- cd android/
+- chmod +x gradlew
+- bundle install
+- gem update --system
+- gem install fastlane --no-rdoc --no-ri --no-document --quiet
+
+script:
+- flutter build appbundle
+- cd android/fastlane
+- bundle exec fastlane android distribute
+
+
