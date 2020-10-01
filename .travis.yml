@@ -23,7 +23,9 @@ script:
 - git clone https://github.com/flutter/flutter.git -b stable
 - ./flutter/bin/flutter doctor
 - flutter build appbundle
-- cd android/fastlane
+- pwd
+- ls
+- cd swipe_swap/android/fastlane
 - bundle exec fastlane android distribute
 
 
