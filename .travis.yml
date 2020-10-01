@@ -20,6 +20,8 @@ before_install:
 - gem update --system
 
 script:
+- git clone https://github.com/flutter/flutter.git -b stable
+- ./flutter/bin/flutter doctor
 - flutter build appbundle
 - cd android/fastlane
 - bundle exec fastlane android distribute
