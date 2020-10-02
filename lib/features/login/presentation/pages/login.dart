@@ -66,10 +66,12 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 26),
-                        LongButton(
-                          'Log in',
-                          action: _manualLogin,
-                        ),
+                        LongButton('Log in', action: () {
+                          if (formKey.currentState.validate()) {
+                            formKey.currentState.save();
+                            Navigator.of(context).pushReplacementNamed('/main');
+                          }
+                        }),
                         SizedBox(height: 8),
                         LongButton(
                           'Forgot your password?',
@@ -86,11 +88,5 @@ class LoginPage extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void _manualLogin() {
-    if (formKey.currentState.validate()) {
-      formKey.currentState.save();
-    }
   }
 }
