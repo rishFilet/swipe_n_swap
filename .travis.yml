@@ -16,13 +16,13 @@ android:
 before_install:
 - gem install bundler
 - cd android/
-- yes | sdkmanager --licenses
 - bundle install
 - gem update --system
 
 script:
 - git clone https://github.com/flutter/flutter.git -b stable
 - ./flutter/bin/flutter doctor
+- ./flutter/bin/flutter doctor --android-licenses
 - ./flutter/bin/flutter build appbundle
 - cd fastlane
 - bundle exec fastlane android distribute
