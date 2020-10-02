@@ -1,23 +1,33 @@
-stages:
-  - name: deploy
-  - if: branch = master
-language: android
-licenses:
-  - 'android-sdk-preview-license-.+'
-  - 'android-sdk-license-.+'
-  - 'google-gdk-license-.+'
-jdk: oraclejdk8
-sudo: false
-
-android:
-  components:
-  - tools
-  - platform-tools
-
 jobs:
   include:
-    - stage: deploy
-      before_install:
+    - language: dart
+      dist: xenial
+      addons:
+        apt:
+          packages:
+            - lib32stdc++6
+      install:
+        - git clone https://github.com/flutter/flutter.git -b stable
+        - ./flutter/bin/flutter doctor
+      script:
+        - ./flutter/bin/flutter test
+      cache:
+        directories:
+          - $HOME/.pub-cache
+    - if: branch = master
+      language: android
+      licenses:
+        - 'android-sdk-preview-license-.+'
+        - 'android-sdk-license-.+'
+        - 'google-gdk-license-.+'
+      jdk: oraclejdk8
+      sudo: false
+
+      android:
+        components:
+        - tools
+        - platform-tools
+      before_script:
       - gem install bundler
       - cd android/
       - touch $HOME/.android/repositories.cfg
