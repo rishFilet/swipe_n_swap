@@ -1,4 +1,6 @@
-
+stages:
+  - name: deploy
+  - if: branch = master
 language: android
 licenses:
   - 'android-sdk-preview-license-.+'
@@ -7,38 +9,29 @@ licenses:
 jdk: oraclejdk8
 sudo: false
 
-env:
-  global:
-    - FIREBASE_TOKEN=1//042GvqNgwhpMPCgYIARAAGAQSNwF-L9Irl5mYN_FKIJRVRGjwgTkhMLYpzSDxp4KES1t5GCAwIHg1CA6-THn07vfBmmehIGauP-g
-
 android:
   components:
   - tools
   - platform-tools
-before_install:
-- gem install bundler
-- cd android/
-- touch $HOME/.android/repositories.cfg
-- yes | sdkmanager --update
-- yes | sdkmanager "platforms;android-29"
-- yes | sdkmanager "build-tools;29.0.2"
-- bundle install
-- gem update --system
 
-script:
-- git clone https://github.com/flutter/flutter.git -b stable
-- ./flutter/bin/flutter doctor
-- ./flutter/bin/flutter build appbundle
-- ls
-- cd ..
-- ls
-- cd build
-- ls
-- cd app
-- ls
-- cd outputs
-- ls
-- cd ~/build/rishFilet/swipe_n_swap/android/fastlane
-- bundle exec fastlane android distribute
+jobs:
+  include:
+    - stage: deploy
+      before_install:
+      - gem install bundler
+      - cd android/
+      - touch $HOME/.android/repositories.cfg
+      - yes | sdkmanager --update
+      - yes | sdkmanager "platforms;android-29"
+      - yes | sdkmanager "build-tools;29.0.2"
+      - bundle install
+      - gem update --system
+
+      script:
+      - git clone https://github.com/flutter/flutter.git -b stable
+      - ./flutter/bin/flutter doctor
+      - ./flutter/bin/flutter build appbundle
+      - cd fastlane
+      - bundle exec fastlane android distribute
 
 
