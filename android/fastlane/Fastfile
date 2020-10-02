@@ -13,7 +13,7 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
-full_apk_path = sh "cd .. && ls && cd build/app/outputs/apk/debug && echo -n $(pwd)/app-debug.apk"
+full_apk_path = sh "cd .. && cd .. && ls && cd build/app/outputs/apk/debug && echo -n $(pwd)/app-debug.apk"
 
 platform :android do
     desc "Swipe and Swap Latest build for testing"

@@ -26,7 +26,6 @@ before_install:
 script:
 - git clone https://github.com/flutter/flutter.git -b stable
 - ./flutter/bin/flutter doctor
-- ./flutter/bin/flutter doctor --android-licenses
 - ./flutter/bin/flutter build appbundle
 - cd fastlane
 - bundle exec fastlane android distribute
