@@ -1,6 +1,6 @@
 jobs:
   exclude:
-    - if: branch = master
+    - if: branch = "master"
       script:
       - git clone https://github.com/flutter/flutter.git -b stable
       - ./flutter/bin/flutter build appbundle
@@ -20,7 +20,7 @@ jobs:
       cache:
         directories:
           - $HOME/.pub-cache
-    - if: branch = master
+    - if: branch = "master"
       language: android
       licenses:
         - 'android-sdk-preview-license-.+'
