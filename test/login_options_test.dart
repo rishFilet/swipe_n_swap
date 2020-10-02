@@ -15,6 +15,10 @@ void main() {
       "test navigation to login screen", _testFirstPageNavigatesToLogin);
   testWidgets("test navigation to login screen and back",
       _testFirstPageNavigatesToLoginAndBack);
+  testWidgets(
+      "test navigation to signup screen", _testFirstPageNavigatesToSignup);
+  testWidgets("test navigation to signup screen and back",
+      _testFirstPageNavigatesToSignupAndBack);
 }
 
 // MARK: - Tests
@@ -61,6 +65,52 @@ Future<void> _testFirstPageNavigatesToLoginAndBack(WidgetTester tester) async {
 
   // performing a tap in the login button
   await tester.tap(loginButton);
+  await tester.pumpAndSettle();
+
+  // finding and asserting the back button
+  Finder backButton = find.byType(IconButton);
+  expect(backButton, findsOneWidget);
+
+  // performing a tap in the back button
+  await tester.tap(backButton);
+  await tester.pumpAndSettle();
+
+  expect(find.text('Log in with Google'), findsOneWidget);
+  expect(find.text('Log in with Facebook'), findsOneWidget);
+  expect(find.byType(TextButton), findsNWidgets(4));
+  expect(find.byType(Image), findsNWidgets(2));
+}
+
+// test navigation to signup screen
+Future<void> _testFirstPageNavigatesToSignup(WidgetTester tester) async {
+  await binding.setSurfaceSize(iPhone8Plus);
+  await tester.pumpWidget(_buildTestableWidget(LoginOptions()));
+
+  // finding and asserting the signup button
+  Finder signupButton = find.text('Sign up for new account');
+  expect(signupButton, findsOneWidget);
+
+  // performing a tap in the signup button
+  await tester.tap(signupButton);
+  await tester.pumpAndSettle();
+
+  expect(find.byType(TextFormField), findsNWidgets(3));
+  expect(find.text('First and last name'), findsOneWidget);
+  expect(find.text('Email address'), findsOneWidget);
+  expect(find.text('Password'), findsOneWidget);
+}
+
+// test navigation to signup screen and back
+Future<void> _testFirstPageNavigatesToSignupAndBack(WidgetTester tester) async {
+  await binding.setSurfaceSize(iPhone8Plus);
+  await tester.pumpWidget(_buildTestableWidget(LoginOptions()));
+
+  // finding and asserting the signup button
+  Finder signupButton = find.text('Sign up for new account');
+  expect(signupButton, findsOneWidget);
+
+  // performing a tap in the signup button
+  await tester.tap(signupButton);
   await tester.pumpAndSettle();
 
   // finding and asserting the back button

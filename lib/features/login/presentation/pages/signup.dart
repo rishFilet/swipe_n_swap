@@ -30,7 +30,7 @@ class SignupPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         MainLogo(),
-                        SizedBox(height: 40),
+                        SizedBox(height: 45),
                         Form(
                           key: formKey,
                           child: Column(
@@ -67,18 +67,12 @@ class SignupPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 26),
-                        LongButton('Log up', action: () {
+                        LongButton('Sign up', action: () {
                           if (formKey.currentState.validate()) {
                             formKey.currentState.save();
                             Navigator.of(context).pushReplacementNamed('/main');
                           }
                         }),
-                        SizedBox(height: 8),
-                        LongButton(
-                          'Forgot your password?',
-                          action: () {},
-                          style: LongButtonStyle.secondary,
-                        ),
                       ],
                     ),
                   ),
