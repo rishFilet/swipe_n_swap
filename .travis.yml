@@ -11,21 +11,18 @@ android:
   components:
   - tools
   - platform-tools
-  - build-tools-25.0.3
-  - android-25
-  - sys-img-armeabi-v7a-google_apis-25
-  - extra-android-m2repository
-  - extra-google-m2repository
-  - extra-google-android-support
 before_install:
 - gem install bundler
 - cd android/
+- yes | sdkmanager "platforms;android-29"
+- yes | sdkmanager "build-tools;29.0.2"
 - bundle install
 - gem update --system
 
 script:
 - git clone https://github.com/flutter/flutter.git -b stable
 - ./flutter/bin/flutter doctor
+- ./flutter/bin/flutter doctor --android-licenses
 - ./flutter/bin/flutter build appbundle
 - cd fastlane
 - bundle exec fastlane android distribute
