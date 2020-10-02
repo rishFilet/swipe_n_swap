@@ -7,6 +7,10 @@ licenses:
 jdk: oraclejdk8
 sudo: false
 
+env:
+  global:
+    - FIREBASE_TOKEN=1//042GvqNgwhpMPCgYIARAAGAQSNwF-L9Irl5mYN_FKIJRVRGjwgTkhMLYpzSDxp4KES1t5GCAwIHg1CA6-THn07vfBmmehIGauP-g
+
 android:
   components:
   - tools
