@@ -16,7 +16,7 @@ android:
 before_install:
 - gem install bundler
 - cd android/
-- yes | ~/Android/Sdk/tools/bin/sdkmanager --licenses
+- yes | sdkmanager --licenses
 - bundle install
 - gem update --system
 
