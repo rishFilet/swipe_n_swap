@@ -13,16 +13,19 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
-full_apk_path = sh "cd .. && cd .. && cd build/app/outputs/flutter-apk && echo -n $(pwd)/app-debug.apk"
+full_apk_path = sh "cd .. && cd .. && cd build/app/outputs && echo -n $(pwd)"
 
 platform :android do
     desc "Swipe and Swap Latest build for testing"
     lane :distribute do
-        build_android_app(task: "assembleDebug") # build_android_app is a built-in fastlane action.
+        build_android_app(
+            task: "assemble",
+            build_type: "Debug"
+        ) # build_android_app is a built-in fastlane action.
 
         firebase_app_distribution(
             app: "1:496887165023:android:f33867052d662545b92bea",
-            apk_path: "#{full_apk_path}",
+            apk_path: "#{full_apk_path}/apk/debug/app-debug.apk",
             groups: "the-og-crew",
             release_notes: "Test out the latest version of the mobile app currently in development by Jon and Rishi"
         )

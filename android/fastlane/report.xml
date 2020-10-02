@@ -5,17 +5,17 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: cd .. &amp;&amp; cd .. &amp;&amp; cd build/app/outputs/flutter-apk &amp;&amp; echo -n $(pwd)/app-debug.apk" time="0.001934011">
+      <testcase classname="fastlane.lanes" name="0: cd .. &amp;&amp; cd .. &amp;&amp; cd build/app/outputs &amp;&amp; echo -n $(pwd)" time="0.001158511">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: assembleDebug" time="1.310381174">
+      <testcase classname="fastlane.lanes" name="1: assembleDebug" time="4.674302897">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: firebase_app_distribution" time="7.593634635">
+      <testcase classname="fastlane.lanes" name="2: firebase_app_distribution" time="7.610880923">
         
       </testcase>
     

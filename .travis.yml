@@ -38,7 +38,7 @@ script:
 - ls
 - cd outputs
 - ls
-- cd ~/build/rishFilet/swip_n_swap/android/fastlane
+- cd ~/build/rishFilet/swipe_n_swap/android/fastlane
 - bundle exec fastlane android distribute
 
 
