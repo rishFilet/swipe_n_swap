@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../features/login/presentation/pages/login.dart';
 import '../features/login/presentation/pages/login_options.dart';
 import '../features/login/presentation/pages/home.dart';
+import '../features/login/presentation/pages/signup.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -10,6 +11,10 @@ class RouteGenerator {
       case '/':
         return MaterialPageRoute(
           builder: (_) => LoginOptions(),
+        );
+      case '/signup':
+        return MaterialPageRoute(
+          builder: (_) => SignupPage(),
         );
       case '/login':
         return MaterialPageRoute(

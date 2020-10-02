@@ -21,7 +21,7 @@ class LoginOptions extends StatelessWidget {
                   SizedBox(height: 110),
                   LongButton(
                     'Sign up for new account',
-                    action: () {},
+                    action: () => Navigator.of(context).pushNamed('/signup'),
                   ),
                   SizedBox(height: 8),
                   LongButton(

@@ -15,6 +15,7 @@ void main() {
       _testShowErrorOnInvalidEmail);
   testWidgets("test attempt to save invalid password shows error message",
       _testShowErrorOnInvalidPassword);
+  testWidgets("test navigation to home screen", _testLoginPageNavigatesToHome);
 }
 
 // MARK: - Tests
@@ -78,6 +79,30 @@ Future<void> _testShowErrorOnInvalidPassword(WidgetTester tester) async {
 
   expect(find.text('Not a valid email'), findsNothing);
   expect(find.text('Must be at least 6 characters long'), findsOneWidget);
+}
+
+// test navigation to home screen
+Future<void> _testLoginPageNavigatesToHome(WidgetTester tester) async {
+  await binding.setSurfaceSize(iPhone8Plus);
+  await tester.pumpWidget(_buildTestableWidget(LoginPage()));
+
+  // inserting VALID email into the email textfield
+  final String validEmail = 'jon.brasileiro@gmail.com';
+  await tester.enterText(find.byKey(LoginPage.emailTextFieldKey), validEmail);
+  await tester.pumpAndSettle();
+
+  // inserting VALID password into the password textfield
+  final String validPassword = '8756483';
+  await tester.enterText(
+      find.byKey(LoginPage.passwordTextFieldKey), validPassword);
+  await tester.pumpAndSettle();
+
+  // performing a tap in the login button
+  await tester.tap(find.text('Log in'));
+  await tester.pumpAndSettle();
+
+  expect(find.byType(Image), findsNWidgets(1));
+  expect(find.byType(IconButton), findsNWidgets(3));
 }
 
 // MARK: - Private
