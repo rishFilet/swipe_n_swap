@@ -27,7 +27,7 @@ Future<void> _testFirstPagePresents(WidgetTester tester) async {
   expect(find.text('Sign up for new account'), findsOneWidget);
   expect(find.text('Log in with Google'), findsOneWidget);
   expect(find.text('Log in with Facebook'), findsOneWidget);
-  expect(find.byType(FlatButton), findsNWidgets(4));
+  expect(find.byType(TextButton), findsNWidgets(4));
   expect(find.byType(Image), findsNWidgets(2));
 }
 
@@ -73,7 +73,7 @@ Future<void> _testFirstPageNavigatesToLoginAndBack(WidgetTester tester) async {
 
   expect(find.text('Log in with Google'), findsOneWidget);
   expect(find.text('Log in with Facebook'), findsOneWidget);
-  expect(find.byType(FlatButton), findsNWidgets(4));
+  expect(find.byType(TextButton), findsNWidgets(4));
   expect(find.byType(Image), findsNWidgets(2));
 }
 

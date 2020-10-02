@@ -15,21 +15,26 @@ class LongButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ButtonTheme(
-      height: 45,
-      minWidth: double.infinity,
-      child: FlatButton(
+    return TextButtonTheme(
+      data: TextButtonThemeData(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(
+            style == LongButtonStyle.primary
+                ? Constants.kLightBackgroundColor
+                : Colors.white,
+          ),
+          overlayColor: MaterialStateProperty.all<Color>(
+            style == LongButtonStyle.primary
+                ? Constants.kBackgroundColor
+                : Colors.white,
+          ),
+          minimumSize:
+              MaterialStateProperty.all<Size>(Size(double.infinity, 45)),
+        ),
+      ),
+      child: TextButton(
         onPressed: action,
         child: _buildChild(),
-        color: style == LongButtonStyle.primary
-            ? Constants.kLightBackgroundColor
-            : Colors.white,
-        splashColor: style == LongButtonStyle.primary
-            ? Constants.kBackgroundColor
-            : Colors.white,
-        highlightColor: style == LongButtonStyle.primary
-            ? Constants.kBackgroundColor
-            : Colors.white,
       ),
     );
   }
@@ -40,22 +45,25 @@ class LongButton extends StatelessWidget {
     if (icon == null) {
       return titleWidget;
     } else {
-      return Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Image(
-            image: AssetImage(icon),
-            width: 28,
-            height: 28,
-            fit: BoxFit.contain,
-          ),
-          Expanded(
-            child: Center(
-              child: titleWidget,
+      return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Image(
+              image: AssetImage(icon),
+              width: 28,
+              height: 28,
+              fit: BoxFit.contain,
             ),
-          ),
-        ],
+            Expanded(
+              child: Center(
+                child: titleWidget,
+              ),
+            ),
+          ],
+        ),
       );
     }
   }
