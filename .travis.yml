@@ -1,4 +1,10 @@
 jobs:
+  exclude:
+    - if: branch = "master"
+      script:
+      - git clone https://github.com/flutter/flutter.git -b stable
+      - ./flutter/bin/flutter build appbundle
+
   include:
     - language: dart
       dist: xenial
@@ -14,7 +20,7 @@ jobs:
       cache:
         directories:
           - $HOME/.pub-cache
-    - if: branch = master
+    - if: branch = "master"
       language: android
       licenses:
         - 'android-sdk-preview-license-.+'
@@ -39,7 +45,6 @@ jobs:
 
       script:
       - git clone https://github.com/flutter/flutter.git -b stable
-      - ./flutter/bin/flutter doctor
       - ./flutter/bin/flutter build appbundle
       - cd fastlane
       - bundle exec fastlane android distribute
