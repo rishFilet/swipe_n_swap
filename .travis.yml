@@ -53,5 +53,5 @@ stages:
   - name: build
     if: NOT branch = "master" AND type = pull_request
   - name: deploy
-    if: branch = "master"
+    if: type != pull_request AND tag IS present
 
