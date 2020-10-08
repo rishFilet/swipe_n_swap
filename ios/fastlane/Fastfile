@@ -21,7 +21,7 @@ platform :ios do
             testers: "rishi.rkhan@gmail.com",
             release_notes: "Initial test version of the app",
             firebase_cli_path: "/usr/local/bin/firebase",
-            ipa_path: "./build/Runner/Runner.ipa"
+            ipa_path: "./build/ios/ipa/swipe_swap.ipa"
         )
     end
 end
