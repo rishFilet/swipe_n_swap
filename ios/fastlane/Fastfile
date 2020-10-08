@@ -20,7 +20,6 @@ platform :ios do
             app: "1:496887165023:ios:b55e5cbf9178ec44b92bea",
             testers: "rishi.rkhan@gmail.com",
             release_notes: "Initial test version of the app",
-            firebase_cli_path: "/usr/local/bin/firebase",
             ipa_path: "./build/ios/ipa/swipe_swap.ipa"
         )
     end
