@@ -14,7 +14,7 @@
 # update_fastlane
 
 platform :ios do
-  desc "New iOS build for Counter Demo app"
+  desc "New iOS build for testing on master branch for swipe n swap. Lit"
     lane :distribute do
         firebase_app_distribution(
             app: "1:496887165023:ios:b55e5cbf9178ec44b92bea",
