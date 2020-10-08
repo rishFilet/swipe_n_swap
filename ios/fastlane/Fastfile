@@ -12,6 +12,8 @@
 
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
+full_apk_path = sh "cd .. && cd .. && cd build/ios/ipa && echo -n $(pwd)"
+
 
 platform :ios do
   desc "New iOS build for testing on master branch for swipe n swap. Lit"
@@ -20,7 +22,7 @@ platform :ios do
             app: "1:496887165023:ios:b55e5cbf9178ec44b92bea",
             testers: "rishi.rkhan@gmail.com",
             release_notes: "Initial test version of the app",
-            ipa_path: "./build/ios/ipa/swipe_swap.ipa"
+            ipa_path: "#{full_apk_path}/swipe_swap.ipa"
         )
     end
 end
