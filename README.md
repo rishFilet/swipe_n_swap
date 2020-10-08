@@ -1,4 +1,5 @@
-[![Codemagic build status](https://api.codemagic.io/apps/5f7cafd79ccdab000dd92ac9/5f7cafd79ccdab000dd92ac8/status_badge.svg)](https://codemagic.io/apps/5f7cafd79ccdab000dd92ac9/5f7cafd79ccdab000dd92ac8/latest_build)
+Android Latest Build: [![Build Status](https://travis-ci.com/rishFilet/swipe_n_swap.svg?branch=master)](https://travis-ci.com/rishFilet/swipe_n_swap)
+iOS Latest Build: [![Codemagic build status](https://api.codemagic.io/apps/5f7cafd79ccdab000dd92ac9/5f7cafd79ccdab000dd92ac8/status_badge.svg)](https://codemagic.io/apps/5f7cafd79ccdab000dd92ac9/5f7cafd79ccdab000dd92ac8/latest_build)
 
 # swipe_swap
 

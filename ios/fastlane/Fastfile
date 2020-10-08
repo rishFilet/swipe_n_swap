@@ -12,8 +12,6 @@
 
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
-sh "cd .. && cd .. && cd build/ios/ipa"
-sh "ls"
 
 platform :ios do
   desc "New iOS build for testing on master branch for swipe n swap. Lit"
@@ -22,7 +20,7 @@ platform :ios do
             app: "1:496887165023:ios:b55e5cbf9178ec44b92bea",
             testers: "rishi.rkhan@gmail.com",
             release_notes: "Initial test version of the app",
-            ipa_path: "swipe_swap.ipa"
+            ipa_path: "/Users/builder/clone/build/ios/ipa/swipe_swap.ipa"
         )
     end
 end
