@@ -16,12 +16,6 @@
 platform :ios do
   desc "New iOS build for Counter Demo app"
     lane :distribute do
-        build_app(
-            scheme: "Runner",
-            archive_path: "./build/Runner.xcarchive",
-            export_method: "development",
-            output_directory: "./build/Runner"
-        )
         firebase_app_distribution(
             app: "1:496887165023:ios:b55e5cbf9178ec44b92bea",
             testers: "rishi.rkhan@gmail.com",
