@@ -19,7 +19,6 @@ class PhotoHolder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    getPictureFromApi();
     return Container(
       decoration: BoxDecoration(
         color: Colors.greenAccent,
@@ -31,15 +30,17 @@ class PhotoHolder extends StatelessWidget {
       child: Image.network(
         'https://apod.nasa.gov/apod/image/2008/helix_blancoHubble_1080.jpg',
         fit: BoxFit.cover,
-        loadingBuilder: (
-          BuildContext context,
-          Widget child,
-          ImageChunkEvent loadingProgress,
-          ){
-            if (loadingProgress == null) return child;
-            return Center(
-              child: CircularProgressIndicator(
-                value: loadingProgress.expectedTotalBytes != null
+        errorBuilder: (context, object, stackTrace) {
+          return Center(
+            child: Text('Something went wrong.'),
+          );
+        },
+        loadingBuilder: (BuildContext context, Widget child,
+            ImageChunkEvent loadingProgress) {
+          if (loadingProgress == null) return child;
+          return Center(
+            child: CircularProgressIndicator(
+              value: loadingProgress.expectedTotalBytes != null
                   ? loadingProgress.cumulativeBytesLoaded /
                       loadingProgress.expectedTotalBytes
                   : null,
