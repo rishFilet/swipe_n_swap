@@ -1,12 +1,7 @@
 jobs:
-  exclude:
-    - if: branch = "master"
-      script:
-      - git clone https://github.com/flutter/flutter.git -b stable
-      - ./flutter/bin/flutter build appbundle
-
   include:
-    - language: dart
+    - stage: test
+      language: dart
       dist: xenial
       addons:
         apt:
@@ -20,7 +15,11 @@ jobs:
       cache:
         directories:
           - $HOME/.pub-cache
-    - if: branch = "master"
+    - stage: build
+      script:
+      - git clone https://github.com/flutter/flutter.git -b stable
+      - ./flutter/bin/flutter build appbundle
+    - stage: deploy
       language: android
       licenses:
         - 'android-sdk-preview-license-.+'
@@ -49,4 +48,10 @@ jobs:
       - cd fastlane
       - bundle exec fastlane android distribute
 
+stages:
+  - test
+  - name: build
+    if: NOT branch = "master" AND type = pull_request
+  - name: deploy
+    if: type != pull_request AND tag IS present
 
